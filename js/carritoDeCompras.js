@@ -7,7 +7,7 @@ cargarEventListeners();
 function cargarEventListeners (){
     cafes.addEventListener('click', comprarCafe);
     carrito.addEventListener('click', eliminarCafe);
-    vaciarCarritoBtn.addEventListener('click', vaciarCarritoBtn);
+    vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
     document.addEventListener('DOMContentLoaded', leerlocalStorage)
 }
 
@@ -32,7 +32,7 @@ function insertarCarrito(cafe){
     const row = document.createElement('tr');
     row.innerHTML = `
     <td>
-    <img src"${cafe.imagen}" width=100>
+    <img src="${cafe.imagen}" width=100>
     </td>
     <td>${cafe.titulo}</td>
     <td>${cafe.precio}</td>
@@ -96,6 +96,7 @@ function leerlocalStorage(){
         </td>
         <td>"${cafe.titulo}"</td>
         <td>"${cafe.precio}"</td>
+        <td>
             <a href="#" class="borrar-cafe" data-id="${cafe.id}"X</a>
     </td>
         `;
